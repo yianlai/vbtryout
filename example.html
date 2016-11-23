@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VoiceBase JWPlayer - Audio</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.min.css"/>
+    <link rel="stylesheet" href="css/jwplayer.vb-sdk-plugin.css"/>
+    <script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/fuse.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.voicebase.js"></script>
+
+    <script type="text/javascript" src="js/lib/jquery.zclip.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-ui-1.10.4.custom.min.js"></script>
+    <!-- latest JWPlayer -->
+    <script type="text/javascript" src="https://app.voicebase.com/js/jwplayer.js"></script>
+
+    <style type="text/css">
+        .content {
+            width: 840px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div id="jwplayer"></div>
+    </div>
+    <script type='text/javascript'>
+        jQuery(document).ready(function () {
+            jwplayer('jwplayer').setup({
+                primary: "html5",
+                file: "https://voicebase-uploads-prod.s3.amazonaws.com/3bad0b79-1469-7e46-6bb1-cecb7ada9e90/079023e1-26c5-4234-a5af-eb1641978271.mp3?AWSAccessKeyId=AKIAJWN23W2Z57N4O6FA&Expires=1479856571&Signature=ZlTs5W5DXHRs5lmpkJ5v1FBOdR4%3D",
+                width: '100%'
+            });
+
+            jQuery('#jwplayer').voicebase({
+                playerId: 'jwplayer',
+                playerType: 'jwplayer',
+                apiUrl: 'https://apis.voicebase.com/v2-beta/',
+                apiVersion: '2.0',
+                mediaId: '079023e1-26c5-4234-a5af-eb1641978271',
+                token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIzZGZjNDAzOS1iN2QwLTQ4NGQtOWEzYS02NTQzYjNiYjZlMjUiLCJ1c2VySWQiOiJhdXRoMHw1ODJhNTUyODRkYjYzNDVkNjI3MjMzY2IiLCJvcmdhbml6YXRpb25JZCI6IjNiYWQwYjc5LTE0NjktN2U0Ni02YmIxLWNlY2I3YWRhOWU5MCIsImVwaGVtZXJhbCI6ZmFsc2UsImlhdCI6MTQ3OTYxOTQzMTE0MCwiaXNzIjoiaHR0cDovL3d3dy52b2ljZWJhc2UuY29tIn0.livSuFxAPPVY1xwxi4azFWkOQEM59Vde_ZXG-MF93wk',
+                localSearch: true,
+                mediaTypeOverride: 'audio',
+                commentsBlock: "commentsId",
+            });
+
+        });
+    </script>
+
+</body>
+</html>
+
+
